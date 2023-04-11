@@ -2,7 +2,7 @@
 from __future__ import print_function
 
 import sys
-
+import os
 import cv2
 
 from DQN import *
@@ -11,6 +11,8 @@ sys.path.append("game/")
 import game.wrapped_flappy_bird as game
 from tqdm import tqdm
 
+
+os.environ["SDL_VIDEODRIVER"] = "dummy"
 
 class Train():
     def __init__(self, game_state, actions_dim, input_size=(224, 224), hidden_dim=256, batch_size=32, lr=2e-3,
